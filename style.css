@@ -1,98 +1,67 @@
 *{
    margin: 0;
    padding: 0;
-}
-
-body{
-   background-image: url(img1.jpg);
-   background-position: center;
-   background-size: cover;
-   font-family: sans-serif;
-   background-repeat: no-repeat;
-   height: 100vh;
-   width: 100%;
-}
-
-.container{
-   background-color: rgba(0, 0, 0, 0.51);
-   color: white;
-   height: 430px;
-   width: 320px;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%,-50%);
    box-sizing: border-box;
-   border-radius: 12px;
-   padding: 80px 35px;
 }
-
-.avatar{
-   height: 100px;
-   width: 100px;
+body{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #1c1c1c;
+   min-height: 100vh;
+}
+.back{
+   position: relative;
+   height: 450px;
+   width: 300px;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(0, 0, 0, 0.7);
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+.back::before{
+   content: '';
    position: absolute;
-   border-radius: 50%;
-   top: -50px;
-   left: calc(50% - 50px);
+   height: 600px;
+   width: 600px;
+   background-image: conic-gradient(transparent, transparent, transparent, #e30000);
+   animation: animate 3s linear infinite;
+}.back::after{
+   content: '';
+   position: absolute;
+   height: 600px;
+   width: 600px;
+   background-image: conic-gradient(transparent, transparent, transparent, #1300e3);
+   animation: animate 3s linear infinite;
+   animation-delay: -1.5s;
 }
-
-h1{
-   margin: 0;
-   padding: 0 0 30px;
-   text-align: center;
-   font-size: 35px;
-   font-weight: bold;
-   color: rgb(255, 85, 0);
+@keyframes animate{
+   0%{
+      rotate: 0deg;
+   }
+   100%{
+      rotate: 360deg;
+   }
 }
-
-.container p{
-   margin: 0 0 10px;
-   padding: 0px;
-   font-size: 18px;
-   font-weight: bold;
-   color: white;
-}
-
-.container input{
-   width: 100%;
-   margin-bottom: 25px;
-}
-
-.form input[type="text"], input[type="password"]{
-   height: 25px;
-   background-color: transparent;
-   color: white;
-   font-weight: ;
-   outline: none;
-   border: none;
-   border-bottom: 1px solid rgb(255, 191, 0);
-}
-
-.form input[type="text"]:hover, input[type="password"]:hover{
-   color: white;
-   font-size: 15px;
-}
-
-.btn{
-   background-color: orangered;
-   color: black;
-   padding: 6px 0;
+div span{
+   position: absolute;
+   inset: 5px;
+   background-color: #1c1c1c;
    border-radius: 15px;
-   border: none;
+   z-index: 1;
 }
-
-.btn:hover{
-   background-color: rgb(253, 204, 9);
-   color: rgb(254, 6, 47);
-   cursor: pointer;
-}
-
-.form a{
-   color: darkgray;
-   text-decoration: none;
-   line-height: 25px;
-}
-
-.form a:hover{
-   color: rgb(241, 60, 60);
-}
+.text{
+   position: relative;
+   z-index: 2;
+   font-size: 5em;
+   color: #00f2ff;
+   text-shadow: 0 0 10px #03bcf4,
+   0 0 20px #03bcf4,
+   0 0 40px #03bcf4,
+   0 0 80px #03bcf4,
+   0 0 100px #03bcf4;
+} 
